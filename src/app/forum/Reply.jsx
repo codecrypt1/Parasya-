@@ -36,7 +36,7 @@ const CommentTile = ({ user, title, details }) => {
 
 export default CommentTile;
 
-function LikeSvg() {
+export function LikeSvg() {
   return (
     <div className="" >
       <svg
@@ -57,7 +57,7 @@ function LikeSvg() {
   );
 }
 
-function UNLikeSvg() {
+export function UNLikeSvg() {
   return (
     <svg
       width="22"

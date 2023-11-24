@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import {LikeSvg, UNLikeSvg} from './Reply'
 
 //icons
 import { AiOutlineLike, AiFillLike } from "react-icons/ai";
@@ -60,13 +61,13 @@ const ForumTile = ({ image, title, context, comments }) => {
           className="ForumButton buttonhoverpointer"
           onClick={handleToggleLike}
         >
-          {like ? <AiFillLike size="30px" /> : <AiOutlineLike size="30px" />}
+          {like ? <UNLikeSvg /> : <LikeSvg />}
         </div>
         <div
           className="ForumButton buttonhoverpointer"
           onClick={handleToggleComment}
         >
-          <FaRegComments size="30px" />
+          <FaRegComments size="22px" />
         </div>
       </div>
       {comment ? <PopUpComment /> : <></>}
