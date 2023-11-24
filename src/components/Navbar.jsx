@@ -36,6 +36,14 @@ const NavbarComp = () => {
           className="sm:hidden"
         />
         <NavbarBrand>
+<<<<<<< HEAD
+          <Link
+            className="font-bold text-inherit text-left text-cyan-900"
+            href="/"
+          >
+            StudentHub Connect
+          </Link>
+=======
           <p className="font-bold text-inherit text-left">
             <Link
               href="/"
@@ -43,13 +51,14 @@ const NavbarComp = () => {
               StudentHub Connect
             </Link>
           </p>
+>>>>>>> 414ea1257436525686154665b7c032fb514223c4
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-5" justify="center">
         <NavbarItem>
           <Link
-            className="text-cyan-900  "
+            className="text-cyan-900   hover:bg-cyan-500 h-9 hover:border-cyan rounded-lg hover:text-white "
             color="foreground"
             aria-current={`${router.pathname == "shop" ? "page" : null}`}
             href="/shop"
@@ -59,7 +68,7 @@ const NavbarComp = () => {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="text-cyan-900"
+            className="text-cyan-900 hover:bg-cyan-500 h-9 hover:border-cyan rounded-lg hover:text-white"
             href="/map"
             aria-current={`${router.pathname == "shop" ? "page" : null}`}
           >
@@ -68,7 +77,7 @@ const NavbarComp = () => {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="text-cyan-900"
+            className="text-cyan-900  hover:bg-cyan-500 h-9 hover:border-cyan rounded-lg hover:text-white"
             color="foreground"
             aria-current={`${router.pathname == "shop" ? "page" : null}`}
             href="/forum"
@@ -79,7 +88,10 @@ const NavbarComp = () => {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link className="text-cyan-900" href="#">
+          <Link
+            className="text-cyan-900  hover:bg-cyan-500 h-9 hover:border-cyan rounded-lg hover:text-white"
+            href="#"
+          >
             Login
           </Link>
         </NavbarItem>
