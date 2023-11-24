@@ -1,7 +1,5 @@
 import College from "@/components/College";
 import NavbarComp from "@/components/Navbar";
-import MapComp from "@/components/MapComp";
-import HostelCards from "@/components/HostelCards";
 
 const Shop = () => {
   return (

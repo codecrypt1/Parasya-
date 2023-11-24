@@ -19,7 +19,7 @@ const HostelCards = () => {
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
           Mens hostel with good furnitured rooms and faciliries with.
         </p>
-        <p className="mb-8"></p>
+        <p className="mb-8">price</p>
       </div>
     </div>
   );
