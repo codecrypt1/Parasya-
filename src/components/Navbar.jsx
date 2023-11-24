@@ -37,10 +37,10 @@ const NavbarComp = () => {
         />
         <NavbarBrand>
           <Link
-            className="font-bold text-inherit text-left text-cyan-900"
+            className="font-bold text-sm md:text-md text-inherit text-left text-cyan-900"
             href="/"
           >
-            <LogoNav />
+            <LogoNav className="logo_navbar"  />
             StudentHub Connect
           </Link>
           <p className="font-bold text-inherit text-left">
