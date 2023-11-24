@@ -43,7 +43,7 @@ const NavbarComp = () => {
             StudentHub Connect
           </Link>
           <p className="font-bold text-inherit text-left">
-            <Link href="/">StudentHub Connect</Link>
+            <Link href="/"></Link>
           </p>
         </NavbarBrand>
       </NavbarContent>
@@ -51,7 +51,7 @@ const NavbarComp = () => {
       <NavbarContent className="hidden sm:flex gap-5" justify="center">
         <NavbarItem>
           <Link
-            className="text-cyan-900   hover:bg-cyan-500 h-9 hover:border-cyan rounded-lg hover:text-white "
+            className="text-cyan-900   "
             color="foreground"
             aria-current={`${router.pathname == "shop" ? "page" : null}`}
             href="/shop"
@@ -61,7 +61,7 @@ const NavbarComp = () => {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="text-cyan-900 hover:bg-cyan-500 h-9 hover:border-cyan rounded-lg hover:text-white"
+            className="text-cyan-900 "
             href="/map"
             aria-current={`${router.pathname == "shop" ? "page" : null}`}
           >
@@ -70,7 +70,7 @@ const NavbarComp = () => {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="text-cyan-900  hover:bg-cyan-500 h-9 hover:border-cyan rounded-lg hover:text-white"
+            className="text-cyan-900 "
             color="foreground"
             aria-current={`${router.pathname == "shop" ? "page" : null}`}
             href="/forum"
@@ -81,10 +81,7 @@ const NavbarComp = () => {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link
-            className="text-cyan-900  hover:bg-cyan-500 h-9 hover:border-cyan rounded-lg hover:text-white"
-            href="#"
-          >
+          <Link className="text-cyan-900 " href="#">
             Login
           </Link>
         </NavbarItem>
