@@ -18,14 +18,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 20px;
-  box-shadow: 10px 10px 20.9px 10px rgba(42, 114, 128, 0.3);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px rgba(42, 114, 128, 0.3);
   background-color: var(--clr1);
 }
 
 .IMGshopCard {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   object-fit: fill;
 }
 .BuyButton {
@@ -49,5 +49,5 @@
 
 .shoppage{
   min-height: 100vh;
-  background-color: var(--clr5);
+  /* background-color: var(--clr5); */
 }
