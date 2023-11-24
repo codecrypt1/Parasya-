@@ -74,8 +74,14 @@ const SignupForm = () => {
     let email = formRef.current["email"].value;
     let id = formRef.current["college_id"].value;
     let password = formRef.current["password"].value;
+    let college = "Government Engineering College, Thrissur";
 
-    console.log(email, id, password);
+    let data = {
+      email,
+      id,
+      password,
+      college,
+    };
   };
   return (
     <div>
