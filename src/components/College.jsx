@@ -11,11 +11,11 @@ const College = () => {
   ];
   return (
     <div className="w-[90%] h-[80%] border-black rounded-xl shadow-2xl">
-      <div className="flex w-full h-full">
-        <div className="w-1/2 h-full bg-[#1f7a8c] p-16">
+      <div className="flex w-full h-full flex-col-reverse md:flex-row">
+        <div className="md:w-1/2 h-full bg-[#1f7a8c] p-16">
           <SelectCustom options={options} />
         </div>
-        <div className="w-1/2 h-full">
+        <div className="md:w-1/2 h-full">
           {" "}
           <MapComp />
         </div>

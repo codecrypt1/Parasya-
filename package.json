@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"npm run next-dev\" \"npm run fastapi-dev\"",
+    "next-dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fastapi-dev": "pip3 install -r requirements.txt && python -m uvicorn api.index:app --reload"
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
@@ -14,6 +16,7 @@
     "@react-google-maps/api": "^2.19.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "concurrently": "^8.2.2",
     "framer-motion": "^10.16.5",
     "leaflet": "^1.9.4",
     "leaflet-defaulticon-compatibility": "^0.1.2",
