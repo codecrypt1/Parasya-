@@ -36,22 +36,15 @@ const NavbarComp = () => {
           className="sm:hidden"
         />
         <NavbarBrand>
-<<<<<<< HEAD
           <Link
             className="font-bold text-inherit text-left text-cyan-900"
             href="/"
           >
             StudentHub Connect
           </Link>
-=======
           <p className="font-bold text-inherit text-left">
-            <Link
-              href="/"
-            >
-              StudentHub Connect
-            </Link>
+            <Link href="/">StudentHub Connect</Link>
           </p>
->>>>>>> 414ea1257436525686154665b7c032fb514223c4
         </NavbarBrand>
       </NavbarContent>
 
