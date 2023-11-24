@@ -14,6 +14,7 @@ import {
 } from "@nextui-org/react";
 
 import { useRouter } from "next/navigation";
+import "./main.css";
 
 const NavbarComp = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,7 +29,7 @@ const NavbarComp = () => {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar className="Navbarbg" onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -36,7 +37,11 @@ const NavbarComp = () => {
         />
         <NavbarBrand>
           <p className="font-bold text-inherit text-left">
-            StudentHub Connect
+            <Link
+              href="/"
+            >
+              StudentHub Connect
+            </Link>
           </p>
         </NavbarBrand>
       </NavbarContent>

@@ -7,7 +7,7 @@ import ServicesCards from "@/components/ServicesCards";
 export default function Home() {
   return (
     <NextUIProvider>
-      <div className="w-screen h-screen">
+      <div className="h-screen">
         <NavbarComp />
         <HomeMain />
         <ServicesCards />

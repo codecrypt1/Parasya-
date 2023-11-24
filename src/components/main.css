@@ -18,14 +18,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px 2px rgba(42, 114, 128, 0.3);
+  border-radius: 20px;
+  box-shadow: 10px 10px 20.9px 10px rgba(42, 114, 128, 0.3);
   background-color: var(--clr1);
 }
 
 .IMGshopCard {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   object-fit: fill;
 }
 .BuyButton {
@@ -46,8 +46,114 @@
   padding-right: 40px;
 }
 
-
-.shoppage{
+.shoppage {
   min-height: 100vh;
   /* background-color: var(--clr5); */
+}
+
+/* Navbar */
+.Navbarbg {
+  overflow-x: hidden;
+  width: 100%;
+  background-color: var(--clr3);
+}
+
+/* HOME */
+.HomeMain {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.hometitle {
+  position: relative;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  transition: 0.5s;
+  border-radius: 30px;
+  font-size: 50px;
+  color: var(--clr1);
+  max-height: 500px;
+  max-width: 800px;
+  min-width: 300px;
+  height: 100vh;
+  width: 80vw;
+  border: 1px solid rgb(255, 255, 255, 0);
+  background-color: rgba(19, 35, 57, 0.9);
+}
+.hometitlecover {
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+.ThreeScreen {
+  position: fixed;
+}
+
+.hometitle:hover {
+  border: 1px solid rgb(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  box-shadow: 0px 4px 80px 21px rgba(42, 114, 128, 0.5);
+}
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap");
+.texttitle {
+  font-family: "Libre Baskerville", serif;
+  color: var(--clr3);
+}
+/* SERVICE CARDS */
+.HomeCard1 {
+  z-index: 5;
+  min-height: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: rgba(19, 35, 57, 0.9);
+  transition: 0.5s;
+  border: 1px solid rgb(255, 255, 255, 0);
+}
+.HomeCard1:hover {
+  border: 1px solid rgb(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  box-shadow: 0px 4px 80px 21px rgba(42, 114, 128, 0.5);
+}
+
+.HomeCardDetails {
+  font-size: 18px;
+  color: var(--clr3);
+}
+
+.ReadMoreButton {
+  margin-right: 15px;
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.HomeCardTitle {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--clr2);
+}
+
+@media (max-width: 768px) {
+  .HomeCard1 {
+    border: 1px solid rgb(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 4px 80px 21px rgba(42, 114, 128, 0.5);
+  }
+  .hometitle {
+    border: 1px solid rgb(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 4px 80px 21px rgba(42, 114, 128, 0.5);
+  }
 }

@@ -13,7 +13,7 @@ const CommentTile = ({ user, title, details }) => {
   };
 
   return (
-    <div className="comment-tile">
+    <div className="comment-tile" onDoubleClick={handleToggleLike}>
       <div className="user-profile">
         {user.profilePic ? (
           <img src={user.profilePic} alt={`Profile of ${user.name}`} />
@@ -70,7 +70,7 @@ export function UNLikeSvg() {
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M44.5 6.93751C36.7564 -0.452981 26.3185 -1.54725 17.5746 1.81044C7.82537 5.55413 0 14.8808 0 27.1532C0 36.5233 4.2312 44.9702 10.0255 52.3893C15.8189 59.8071 23.3937 66.4747 30.5442 72.3191L30.7062 72.4516C33.3826 74.6391 35.6298 76.476 37.6299 77.7391C39.7484 79.0765 41.9323 80 44.5 80C47.0677 80 49.2517 79.0765 51.3699 77.7391C53.3702 76.476 55.6174 74.6391 58.2937 72.4516L58.4556 72.3191C65.6063 66.4747 73.1811 59.8071 78.9746 52.3893C84.7689 44.9702 89 36.5233 89 27.1532C89 14.8808 81.1747 5.55413 71.4256 1.81044C62.6814 -1.54725 52.2434 -0.452981 44.5 6.93751Z"
-        fill="#080808"
+        fill="red"
       />
     </svg>
   );
