@@ -28,8 +28,8 @@ const HomeTitle = () => {
 
       <Link href="#explore" className="explorebutton">
         <div style={{ fontSize: "20px" }}>Explore</div>
-        <div className="">
-          <FaArrowDown size="20px" />
+        <div className=" pl-1">
+          <FaArrowDown size="15px" />
         </div>
       </Link>
     </div>
