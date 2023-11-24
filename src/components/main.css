@@ -1,0 +1,53 @@
+* {
+  --clr1: #ffffff;
+  --clr2: #e1e5f2;
+  --clr3: #bfdbf7;
+  --clr4: #1f7a8c;
+  --clr5: #022b3a;
+}
+.ShopCardMain {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.ShopCard {
+  margin: 50px;
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20.9px 10px rgba(42, 114, 128, 0.3);
+  background-color: var(--clr1);
+}
+
+.IMGshopCard {
+  width: 200px;
+  height: 200px;
+  object-fit: fill;
+}
+.BuyButton {
+  justify-content: space-evenly;
+  display: flex;
+  font-weight: 800;
+  color: var(--clr1);
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 60px;
+  background-color: var(--clr5);
+  transition: 0.2s;
+}
+
+.ShopCard:hover .BuyButton {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+.shoppage{
+  min-height: 100vh;
+  background-color: var(--clr5);
+}
