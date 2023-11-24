@@ -5,7 +5,7 @@ const ServicesCards = () => {
     <div className=" grid grid-cols-3 mt-4 content-center ml-16 py-2">
       <div class="max-w-sm p-6 bg-white border border-cyan-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-cyan-900 dark:text-white">
+          <h5 class=" mb-2 text-2xl font-bold tracking-tight text-cyan-900 dark:text-white">
             BLACK MARKET
           </h5>
         </a>

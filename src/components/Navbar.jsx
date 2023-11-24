@@ -44,6 +44,7 @@ const NavbarComp = () => {
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
           <Link
+            className="text-cyan-900  "
             color="foreground"
             aria-current={`${router.pathname == "shop" ? "page" : null}`}
             href="/shop"
@@ -53,6 +54,7 @@ const NavbarComp = () => {
         </NavbarItem>
         <NavbarItem>
           <Link
+            className="text-cyan-900"
             href="/map"
             aria-current={`${router.pathname == "shop" ? "page" : null}`}
           >
@@ -61,6 +63,7 @@ const NavbarComp = () => {
         </NavbarItem>
         <NavbarItem>
           <Link
+            className="text-cyan-900"
             color="foreground"
             aria-current={`${router.pathname == "shop" ? "page" : null}`}
             href="/forum"
@@ -71,10 +74,18 @@ const NavbarComp = () => {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+          <Link className="text-cyan-900" href="#">
+            Login
+          </Link>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
+          <Button
+            className="text-white bg-cyan-900 hover:bg-cyan-500 "
+            as={Link}
+            color="primary"
+            href="#"
+            variant="flat"
+          >
             Sign Up
           </Button>
         </NavbarItem>
