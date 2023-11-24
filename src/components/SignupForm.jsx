@@ -94,11 +94,27 @@ const SignupForm = () => {
             StudentHub Connect
           </a>
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <div className="p-10 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-cyan-800 md:text-2xl dark:text-white">
                 Create and account
               </h1>
               <form ref={formRef} className="space-y-4 md:space-y-6" action="#">
+              <div>
+                  <label
+                    for="name"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cayn-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500"
+                    placeholder="Name"
+                    required=""
+                  />
+                </div>
                 <div>
                   <label
                     for="email"
@@ -130,7 +146,7 @@ const SignupForm = () => {
                     Your College Id
                   </label>
                   <input
-                    type="tect"
+                    type="text"
                     name="college_id"
                     id="id"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cayn-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500"
@@ -151,22 +167,6 @@ const SignupForm = () => {
                     id="password"
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500"
-                    required=""
-                  />
-                </div>
-                <div>
-                  <label
-                    for="confirm-password"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    Confirm password
-                  </label>
-                  <input
-                    type="confirm-password"
-                    name="confirm-password"
-                    id="confirm-password"
-                    placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-cyan-500"
                     required=""
                   />
                 </div>
