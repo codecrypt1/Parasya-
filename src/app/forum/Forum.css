@@ -1,29 +1,119 @@
 .ForumBody {
-    padding: 10px;
-    min-height: 100vh;
-    min-width: 100%;
-  }
-  .ForumTile {
-    padding-left: 70px;
-    min-height: 100px;
-    width: 100%;
-    background-color: rgb(203, 203, 203);
-    border-radius: 20px;
-  }
-  
-  .ForumImg {
-    position: relative;
-    top: 10px;
-    left: -60px;
-    background-color: azure;
-    height: 50px;
-    width: 50px;
-    border-radius: 50px;
-  }
-  
-  .ForumDetails{
-      position: relative;
-      top: -40px;
-      margin-right: 10px;
-      border-radius: 20px;
-  }
+  padding: 10px;
+  min-height: 100vh;
+  min-width: 100%;
+}
+.ForumTile {
+  margin: 10px;
+  min-height: 100px;
+  background-color: rgb(203, 203, 203);
+  border-radius: 20px;
+}
+
+.ForumDetails {
+  position: relative;
+  margin-right: 10px;
+  border-radius: 20px;
+}
+
+.leftsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line {
+  width: 10px;
+  min-height: 10px;
+  border-radius: 50px;
+  background-color: rgb(121, 121, 121);
+}
+.ForumImg {
+  margin: 10px;
+  background-color: azure;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
+
+.LikeButton{
+  width: 20px;
+  height: 20px;
+}
+.buttonhoverpointer{
+  cursor: pointer;
+}
+
+.bottomForum{
+  height: 40px;
+  display: flex;
+  align-self: flex-start;
+}
+
+.ForumButton{
+  margin-left: 30px;
+}
+
+.popupcomment{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.commentWindow{
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  width: 80vw;
+  border-radius: 50px;
+  border: 2px solid black;
+  background-color: #E1E5F2;
+}
+
+.closeButton{
+  height: 50px;
+  width: 50px;
+  position: relative;
+  right: 25px;
+  top: 25px;
+  border-radius: 25px;
+  align-self: flex-end;
+  background-color: red;
+}
+
+/* CommentTile.css */
+
+.comment-tile {
+  display: flex;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.user-profile {
+  margin-right: 10px;
+}
+
+.user-profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.comment-details {
+  flex-grow: 1;
+}
+
+.comment-details h3 {
+  margin: 0;
+}
+
+.comment-details p {
+  margin: 5px 0;
+}

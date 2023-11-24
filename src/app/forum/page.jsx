@@ -1,7 +1,11 @@
 import ForumTile from "./ForumTile";
 
 const Forum = () => {
-  return <div>Forum<ForumTile/></div>;
+  return (
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <ForumTile />
+    </div>
+  );
 };
 
 export default Forum;
