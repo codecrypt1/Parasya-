@@ -7,19 +7,10 @@ import { AiOutlineLike, AiFillLike } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import { FaRegComments } from "react-icons/fa";
 
-
 import "./Forum.css";
 import CommentTile from "./Reply";
-const ForumTile = () => {
+const ForumTile = ({ image, title, context, comments }) => {
   const PopUpComment = () => {
-    const comment = {
-      user: {
-        name: "",
-        profilePic: "",
-      },
-      title: "Name Example",
-      details: "Comment Here",
-    };
     return (
       <section>
         <div className="popupcomment">
@@ -28,9 +19,11 @@ const ForumTile = () => {
               className="closeButton buttonhoverpointer"
               onClick={handleToggleComment}
             >
-              <IoMdClose size="30px"/>
+              <IoMdClose size="30px" />
             </div>
-            <CommentTile {...comment} />
+            {comments.map((comment, index) => (
+              <CommentTile key={index} {...comment} />
+            ))}
           </div>
         </div>
       </section>
@@ -49,16 +42,17 @@ const ForumTile = () => {
   return (
     <div
       className="ForumTile"
-      style={{display: "flex", flexDirection: "column" }}
+      style={{ display: "flex", flexDirection: "column" }}
     >
-      <div style={{ display: "flex"}}>
+      <div style={{ display: "flex" }}>
         <div className="leftsection">
-          <div className="ForumImg"></div>
+          <img alt="" src={image} className="ForumImg"></img>
           {/* <div className="line"></div> */}
         </div>
 
         <div className="ForumDetails">
-          <h1>TITLE</h1>Hello World
+          <h1>{title}</h1>
+          {context}
         </div>
       </div>
       <div className="bottomForum">

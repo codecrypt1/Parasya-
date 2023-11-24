@@ -1,6 +1,7 @@
 import React from "react";
 
 const AddForum = () => {
+  
   return (
     <div
       className="AddForumTile"
