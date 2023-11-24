@@ -18,8 +18,8 @@ const data = {
       for: "ladies",
     },
     "Golden Hostel": {
-      lat: "10.620069923071503",
-      long: " 76.20148968349517",
+      lat: "10.555997779537748",
+      long: " 76.22465464483014",
       for: "ladies",
     },
     Haritha: {
