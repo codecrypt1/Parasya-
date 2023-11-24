@@ -5,14 +5,15 @@ import ForumTile from "./ForumTile";
 const Forum = () => {
   const userData = [
     {
-      name: "My name"
+      name: "My name",
+      image: "https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_640.jpg"
     }
   ]
   const forums = [
     {
       image: "https://cdn.pixabay.com/photo/2023/10/01/16/01/rose-8287698_640.jpg",
       title: "Main Name 1",
-      context: "Lorem Ipsum dcyeg ybsydbtvf fuesvvufbesv",
+      context: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quod autem maiores sed vitae maxime reiciendis, culpa soluta quia cumque atque nesciunt ea nisi magnam nulla reprehenderit blanditiis enim laborum.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quod autem maiores sed vitae maxime reiciendis, culpa soluta quia cumque atque nesciunt ea nisi magnam nulla reprehenderit blanditiis enim laborum.",
       comments: [
         {
           user: {
@@ -64,7 +65,9 @@ const Forum = () => {
       {forums.map((forum, index) => (
         <ForumTile key={index} {...forum} />
       ))}
-      <AddForum {...userData}/>
+      {userData.map((userData, index) => (
+        <AddForum key={index} {...userData} />
+      ))}
     </div>
   );
 };
