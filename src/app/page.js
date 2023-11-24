@@ -1,13 +1,16 @@
 "use client";
 import { NextUIProvider } from "@nextui-org/react";
 import NavbarComp from "@/components/Navbar";
+import HomeMain from "@/components/HomeMain";
+import ServicesCards from "@/components/ServicesCards";
 
 export default function Home() {
   return (
     <NextUIProvider>
       <div className="w-screen h-screen">
         <NavbarComp />
-        <div>Hello world</div>
+        <HomeMain />
+        <ServicesCards />
       </div>
     </NextUIProvider>
   );
