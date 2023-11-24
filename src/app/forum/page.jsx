@@ -1,5 +1,7 @@
+import ForumTile from "./ForumTile";
+
 const Forum = () => {
-  return <div>Forum</div>;
+  return <div>Forum<ForumTile/></div>;
 };
 
 export default Forum;

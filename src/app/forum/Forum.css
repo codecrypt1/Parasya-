@@ -1,0 +1,29 @@
+.ForumBody {
+    padding: 10px;
+    min-height: 100vh;
+    min-width: 100%;
+  }
+  .ForumTile {
+    padding-left: 70px;
+    min-height: 100px;
+    width: 100%;
+    background-color: rgb(203, 203, 203);
+    border-radius: 20px;
+  }
+  
+  .ForumImg {
+    position: relative;
+    top: 10px;
+    left: -60px;
+    background-color: azure;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+  }
+  
+  .ForumDetails{
+      position: relative;
+      top: -40px;
+      margin-right: 10px;
+      border-radius: 20px;
+  }
