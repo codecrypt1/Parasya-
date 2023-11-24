@@ -19,7 +19,7 @@
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
-  box-shadow: 10px 10px 20.9px 10px rgba(42, 114, 128, 0.3);
+  box-shadow: 1px 1px 15.3px 2px rgba(42, 114, 128, 0.3);
   background-color: var(--clr1);
 }
 
