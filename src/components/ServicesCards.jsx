@@ -2,7 +2,7 @@ import React from "react";
 
 const ServicesCards = () => {
   return (
-    <div className=" grid grid-cols-3 mt-4 content-center ml-16 py-2">
+    <div className=" grid grid-cols-1 gap-7 mx-10 mt-10 pb-6 md:grid md:grid-cols-3">
       <div class="max-w-sm p-6 bg-white border border-cyan-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a href="/shop">
           <h5 class=" mb-2 text-2xl font-bold tracking-tight text-cyan-900 dark:text-white">
