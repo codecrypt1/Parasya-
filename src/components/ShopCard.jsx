@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const ShopCard = () => {
@@ -17,9 +18,12 @@ const ShopCard = () => {
             <p className="text-cyan-900 text-lg">calculator</p>
             <p className="text-cyan-900"> PRICE:567rs</p>
             <div className="flex justify-center text-center  ">
-              <p className="w-20 h-8 bg-cyan-900 mp-24 text-white hover:text-cyan-900 hover:bg-cyan-500 ">
+              <Link
+                href="/shop/card"
+                className="w-20 h-8 bg-cyan-900 mp-24 text-white hover:text-cyan-900 hover:bg-cyan-500 "
+              >
                 BUY
-              </p>
+              </Link>
             </div>
           </div>
         </div>
@@ -37,9 +41,12 @@ const ShopCard = () => {
             <p className="text-cyan-900 text-lg">calculator</p>
             <p className="text-cyan-900"> PRICE:567rs</p>
             <div className="flex justify-center text-center  ">
-              <p className="w-20 h-8 bg-cyan-900 mp-24 text-white hover:text-cyan-900 hover:bg-cyan-500 ">
+              <Link
+                href="/shop/card"
+                className="w-20 h-8 bg-cyan-900 mp-24 text-white hover:text-cyan-900 hover:bg-cyan-500 "
+              >
                 BUY
-              </p>
+              </Link>
             </div>
           </div>
         </div>
@@ -57,9 +64,12 @@ const ShopCard = () => {
             <p className="text-cyan-900 text-lg">calculator</p>
             <p className="text-cyan-900"> PRICE:567rs</p>
             <div className="flex justify-center text-center  ">
-              <p className="w-20 h-8 bg-cyan-900 mp-24 text-white hover:text-cyan-900 hover:bg-cyan-500 ">
+              <Link
+                href="/shop/card"
+                className="w-20 h-8 bg-cyan-900 mp-24 text-white hover:text-cyan-900 hover:bg-cyan-500 "
+              >
                 BUY
-              </p>
+              </Link>
             </div>
           </div>
         </div>
