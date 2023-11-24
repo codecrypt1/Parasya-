@@ -4,7 +4,7 @@ const ServicesCards = () => {
   return (
     <div className=" grid grid-cols-3 mt-4 content-center ml-16 py-2">
       <div class="max-w-sm p-6 bg-white border border-cyan-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
+        <a href="/shop">
           <h5 class=" mb-2 text-2xl font-bold tracking-tight text-cyan-900 dark:text-white">
             BLACK MARKET
           </h5>
@@ -13,7 +13,7 @@ const ServicesCards = () => {
           Here you can buy and rent any college products.
         </p>
         <a
-          href="#"
+          href="/shop"
           class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-500 rounded-lg hover:bg-cyan-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Read more
@@ -35,7 +35,7 @@ const ServicesCards = () => {
         </a>
       </div>
       <div class="max-w-sm p-6 bg-white border border-cyan-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
+        <a href="/forum">
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-cyan-900 dark:text-white">
             CHAT WITH MATES
           </h5>
@@ -44,7 +44,7 @@ const ServicesCards = () => {
           Here you can chat with with your college mates.
         </p>
         <a
-          href="#"
+          href="/forum"
           class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-500 rounded-lg hover:bg-cyan-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Read more
@@ -66,7 +66,7 @@ const ServicesCards = () => {
         </a>
       </div>
       <div class="max-w-sm p-6 bg-white border border-cyan-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
+        <a href="/map">
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-cyan-900 dark:text-white">
             HOSTEL FINDER
           </h5>
@@ -75,7 +75,7 @@ const ServicesCards = () => {
           These is where you can locate the hostel that best suits your needs.
         </p>
         <a
-          href="#"
+          href="/map"
           class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-500 rounded-lg hover:bg-cyan-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Read more
