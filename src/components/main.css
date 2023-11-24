@@ -58,6 +58,10 @@
   background-color: var(--clr3);
 }
 
+.LogoNavBar{
+  display: flex;
+}
+
 /* HOME */
 .HomeMain {
   background-color: transparent;

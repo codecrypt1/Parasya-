@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import { LikeSvg, UNLikeSvg } from "./Reply";
-
-//icons
 import { AiOutlineLike, AiFillLike } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import { FaRegComments } from "react-icons/fa";
