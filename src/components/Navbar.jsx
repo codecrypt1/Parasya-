@@ -36,12 +36,12 @@ const NavbarComp = () => {
         />
         <NavbarBrand>
           <p className="font-bold text-inherit text-left">
-            Student Hub Connect
+            StudentHub Connect
           </p>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden sm:flex gap-5" justify="center">
         <NavbarItem>
           <Link
             className="text-cyan-900  "
@@ -68,7 +68,7 @@ const NavbarComp = () => {
             aria-current={`${router.pathname == "shop" ? "page" : null}`}
             href="/forum"
           >
-            Student connect
+            Student Sync
           </Link>
         </NavbarItem>
       </NavbarContent>

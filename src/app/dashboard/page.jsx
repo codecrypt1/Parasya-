@@ -1,7 +1,11 @@
+import { UploadForm } from "@/components/UploadForm";
+
 const Dashboard = () => {
   return (
     <div>
-      <div>dashboard</div>
+      <div>
+        <UploadForm/>
+      </div>
     </div>
   );
 };
