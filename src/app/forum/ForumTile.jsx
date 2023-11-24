@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import {LikeSvg, UNLikeSvg} from './Reply'
+import { LikeSvg, UNLikeSvg } from "./Reply";
 
 //icons
 import { AiOutlineLike, AiFillLike } from "react-icons/ai";
@@ -45,14 +45,14 @@ const ForumTile = ({ image, title, context, comments }) => {
       className="ForumTile"
       style={{ display: "flex", flexDirection: "column" }}
     >
-      <div style={{ display: "flex"}}>
+      <div style={{ display: "flex" }}>
         <div className="leftsection">
           <img alt="" src={image} className="ForumImg"></img>
           <div className="line"></div>
         </div>
 
         <div className="ForumDetails">
-          <h1 style={{fontWeight:"800"}}>{title}</h1>
+          <h1 style={{ fontWeight: "800" }}>{title}</h1>
           {context}
         </div>
       </div>

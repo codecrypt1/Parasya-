@@ -6,7 +6,7 @@ const Shop = () => {
     <div className="">
       <div>
         <NavbarComp />
-        <div className="w-screen h-screen flex  justify-center items-center">
+        <div className=" h-screen flex  justify-center items-center">
           <College />
         </div>
       </div>
