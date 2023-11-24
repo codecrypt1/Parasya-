@@ -42,9 +42,6 @@ const NavbarComp = () => {
           >
             StudentHub Connect
           </Link>
-          <p className="font-bold text-inherit text-left">
-            <Link href="/">StudentHub Connect</Link>
-          </p>
         </NavbarBrand>
       </NavbarContent>
 

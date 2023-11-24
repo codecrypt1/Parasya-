@@ -68,9 +68,8 @@ const SignupForm = () => {
     },
   ];
 
-  let handleSubmit = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
-
     let email = formRef.current["email"].value;
     let id = formRef.current["college_id"].value;
     let password = formRef.current["password"].value;
@@ -82,6 +81,20 @@ const SignupForm = () => {
       password,
       college,
     };
+    try {
+      const response = await fetch("http://localhost:8000/api/register", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      console.log("Registration successful:", response.data);
+    } catch (error) {
+      // Optionally, you can handle the response or redirect to the login page
+
+      console.error("Registration failed:", error.message);
+    }
   };
   return (
     <div>
@@ -98,10 +111,15 @@ const SignupForm = () => {
               <h1 className="text-xl font-bold leading-tight tracking-tight text-cyan-800 md:text-2xl dark:text-white">
                 Create and account
               </h1>
-              <form ref={formRef} className="space-y-4 md:space-y-6" action="#">
-              <div>
+              <form
+                ref={formRef}
+                onSubmit={handleRegister}
+                className="space-y-4 md:space-y-6"
+                action="#"
+              >
+                <div>
                   <label
-                    for="name"
+                    htmlFor="name"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Your Name
@@ -117,7 +135,7 @@ const SignupForm = () => {
                 </div>
                 <div>
                   <label
-                    for="email"
+                    htmlFor="email"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Your email
@@ -133,14 +151,14 @@ const SignupForm = () => {
                 </div>
                 <div>
                   <label
-                    for="college"
-                    classNameName="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    htmlFor="college"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   ></label>
                   <SelectCustom label="Select your college" options={options} />
                 </div>
                 <div>
                   <label
-                    for="id"
+                    htmlFor="id"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Your College Id
@@ -156,7 +174,7 @@ const SignupForm = () => {
                 </div>
                 <div>
                   <label
-                    for="password"
+                    htmlFor="password"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Password
@@ -182,7 +200,7 @@ const SignupForm = () => {
                   </div>
                   <div className="ml-3 text-sm">
                     <label
-                      for="terms"
+                      htmlFor="terms"
                       className="font-light text-gray-500 dark:text-gray-300"
                     >
                       I accept the{" "}
@@ -197,7 +215,9 @@ const SignupForm = () => {
                 </div>
                 <button
                   type="submit"
-                  onClick={handleSubmit}
+                  onClick={() => {
+                    handleRegister();
+                  }}
                   className="w-full text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
                 >
                   Create an account

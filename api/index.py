@@ -1,10 +1,17 @@
-from fastapi import FastAPI, HTTPException
+# main.py
+
+from fastapi import FastAPI, HTTPException, Depends, status
 from fastapi.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
+from jose import JWTError, jwt
+from passlib.context import CryptContext
 from pydantic import BaseModel
+from datetime import datetime, timedelta
+from fastapi.security import OAuth2PasswordBearer
 
 app = FastAPI()
 
+# Enable CORS (Cross-Origin Resource Sharing)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -13,56 +20,67 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# MongoDB setup
 @app.on_event("startup")
 async def startup_db_client():
     app.mongodb_client = AsyncIOMotorClient("mongodb://localhost:27017")
     app.mongodb = app.mongodb_client["studenthub"]
-    app.collection = app.mongodb["users"]
+    app.users_collection = app.mongodb["users"]
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
     app.mongodb_client.close()
 
-@app.get("/api")
-async def read_root():
-    return {"message": "Hello, FastAPI!"}
+# Secret key to sign JWT tokens
+SECRET_KEY = "your_secret_key"
+ALGORITHM = "HS256"
 
+# Password hashing
+PASSWORD_HASHING = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+# User model for registration
+class UserRegistration(BaseModel):
+    name: str
+    email: str
+    college: str
+    id: str
+    password: str
+
+# User model for token response
 class User(BaseModel):
     name: str
-    email:str
-    password:str
-    college:str
+    email: str
+    college: str
+    id: str
 
-class Forum(BaseModel):
-    name:str
-    image:str
-    title:str
-    context:str
-
-@app.post("/api/items/")
-async def create_item(item: User):
-    inserted_item = await app.collection.insert_one(item.dict())
-    return {"id": str(inserted_item.inserted_id)}
-
-
-@app.get("/api/items/{item_id}")
-async def read_item(item_id: str):
-    document = await app.collection.find_one({"_id": item_id})
-    if document:
-        return document
-    raise HTTPException(status_code=404, detail="Item not found")
-
-@app.put("/api/items/{item_id}")
-async def update_item(item_id: str, item: User):
-    updated_item = await app.collection.update_one(
-        {"_id": item_id}, {"$set": item.dict()}
+# Token generation for login
+@app.post("/api/token")
+async def login(email: str, password: str):
+    user = await app.users_collection.find_one({"email": email})
+    if user and PASSWORD_HASHING.verify(password, user["hashed_password"]):
+        token_data = {"sub": user["id"]}
+        return {"access_token": create_jwt_token(token_data), "token_type": "bearer"}
+    raise HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Invalid credentials",
+        headers={"WWW-Authenticate": "Bearer"},
     )
-    if updated_item.modified_count:
-        return {"message": "Item updated successfully"}
-    raise HTTPException(status_code=404, detail="Item not found")
-@app.delete("/api/items/{item_id}")
-async def delete_item(item_id: str):
-    deleted_item = await app.collection.delete_one({"_id": item_id})
-    if deleted_item.deleted_count:
-        return {"message": "Item deleted successfully"}
-    raise HTTPException(status_code=404, detail="Item not found")
+# Registration endpoint
+@app.post("/api/register", response_model=User)
+async def register(user: UserRegistration):
+    hashed_password = PASSWORD_HASHING.hash(user.password)
+    user_dict = user.dict()
+    user_dict["hashed_password"] = hashed_password
+    user_id = await app.users_collection.insert_one(user_dict)
+    return {"name": user.name, "email": user.email, "college": user.college, "id": str(user_id.inserted_id)}
+
+# Function to create JWT token
+def create_jwt_token(data: dict, expires_delta: timedelta = None):
+    to_encode = data.copy()
+    if expires_delta:
+        expire = datetime.utcnow() + expires_delta
+    else:
+        expire = datetime.utcnow() + timedelta(minutes=15)
+    to_encode.update({"exp": expire})
+    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    return encoded_jwt
