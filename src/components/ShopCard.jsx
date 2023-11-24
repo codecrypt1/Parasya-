@@ -1,81 +1,56 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import "./main.css";
+
+// import { FaArrowRight } from "react-icons/fa";
 
 const ShopCard = () => {
+  const CardData = [
+    {
+      name: "NAME",
+      price: "500",
+      image: "/shopitems/calculator.webp",
+    },
+    {
+      name: "NAME 2",
+      price: "50",
+      image: "/shopitems/calculator.webp",
+    },
+    {
+      name: "NAME 3",
+      price: "300",
+      image: "/shopitems/calculator.webp",
+    },
+  ];
+
   return (
-    <div className="grid grid-cols-1 gap-7 mx-10 mt-10 md:grid md:grid-cols-3 ">
-      <div className="flex flex-row mx-6 items-center">
-        <div className="flex flex-col object-fill items-center border-1 p-6 shadow-lg w-72 h-96 border-inherits">
-          <div className=" w-[70%] h-[60%]  border-1 border-cyan-900 relative">
-            <Image
-              className=""
-              src="/shopitems/calculator.webp"
-              layout="fill"
-            />
-          </div>
-          <div className=" flex flex-col items-center my-6 mx-4 gap-3 overflow-hidden">
-            <p className="text-cyan-900 text-lg">calculator</p>
-            <p className="text-cyan-900"> PRICE:567rs</p>
-            <div className="flex justify-center text-center  ">
-              <Link
-                href="/shop/card"
-                className="w-20 h-8 bg-cyan-900 mp-24 text-white hover:text-cyan-900 hover:bg-cyan-500 "
-              >
-                BUY
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-row mx-6 items-center">
-        <div className="flex flex-col object-fill items-center border-1  p-6 shadow-lg w-72 h-96 border-inherits">
-          <div className=" w-[70%] h-[60%]  border-1 border-cyan-900 relative">
-            <Image
-              className=""
-              src="/shopitems/calculator.webp"
-              layout="fill"
-            />
-          </div>
-          <div className=" flex flex-col items-center my-6 mx-4 gap-3 overflow-hidden">
-            <p className="text-cyan-900 text-lg">calculator</p>
-            <p className="text-cyan-900"> PRICE:567rs</p>
-            <div className="flex justify-center text-center  ">
-              <Link
-                href="/shop/card"
-                className="w-20 h-8 bg-cyan-900 mp-24 text-white hover:text-cyan-900 hover:bg-cyan-500 "
-              >
-                BUY
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-row mx-6 items-center">
-        <div className="flex flex-col object-fill items-center border-1 p-6 shadow-lg w-72 h-96 border-inherits">
-          <div className=" w-[70%] h-[60%]  border-1 border-cyan-900 relative">
-            <Image
-              className=""
-              src="/shopitems/calculator.webp"
-              layout="fill"
-            />
-          </div>
-          <div className=" flex flex-col items-center my-6 mx-4 gap-3 overflow-hidden">
-            <p className="text-cyan-900 text-lg">calculator</p>
-            <p className="text-cyan-900"> PRICE:567rs</p>
-            <div className="flex justify-center text-center  ">
-              <Link
-                href="/shop/card"
-                className="w-20 h-8 bg-cyan-900 mp-24 text-white hover:text-cyan-900 hover:bg-cyan-500 "
-              >
-                BUY
-              </Link>
-            </div>
-          </div>
-        </div>
+    <div className="shoppage">
+      <div className="ShopCardMain">
+        {CardData.map((Data, index) => (
+          <CardShop key={index} {...Data} />
+        ))}
       </div>
     </div>
   );
 };
 
 export default ShopCard;
+
+function CardShop({ name, image, price }) {
+  return (
+    <div className="ShopCard">
+      <img className="IMGshopCard" src={image} layout="fill" />
+      <div className=" flex flex-col items-center my-6 mx-4 gap-3 overflow-hidden">
+        <p className="text-cyan-900 text-lg">{name}</p>
+        <p className="text-cyan-900">₹{price}</p>
+        <div className="flex justify-center text-center  ">
+          <Link href="/shop/card" className="BuyButton">
+            BUY
+            {/* <FaArrowRight /> */}
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
