@@ -58,7 +58,7 @@ class User(BaseModel):
 async def login(email: str, password: str):
     user = await app.users_collection.find_one({"email": email})
     if user and PASSWORD_HASHING.verify(password, user["hashed_password"]):
-        token_data = {"sub": user["id"]}
+        token_data = {"sub": user["email"]}
         return {"access_token": create_jwt_token(token_data), "token_type": "bearer"}
     raise HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
