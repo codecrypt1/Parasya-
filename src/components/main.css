@@ -18,14 +18,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 20px;
-  box-shadow: 10px 10px 20.9px 10px rgba(42, 114, 128, 0.3);
+  border-radius: 10px;
+  box-shadow: 1px 1px 15.9px 5px rgba(42, 114, 128, 0.3);
   background-color: var(--clr1);
 }
 
 .IMGshopCard {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   object-fit: fill;
 }
 .BuyButton {
