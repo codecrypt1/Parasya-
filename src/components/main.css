@@ -99,14 +99,17 @@
 }
 
 .hometitle:hover {
-  border: 1px solid rgb(255, 255, 255, 0.5);
+  border: 1px solid rgb(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
-  box-shadow: 0px 4px 20px 20px rgba(42, 114, 128, 0.);
+  box-shadow: 0px 4px 20px 20px rgba(42, 114, 128, 0);
 }
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
 .texttitle {
-  font-family: "Libre Baskerville", serif;
-  color: var(--clr3);
+  font-size: 50px;
+  font-weight: 800;
+  font-family: "Kanit", sans-serif;
+  color: var(--clr1);
 }
 /* SERVICE CARDS */
 .HomeCard1 {
@@ -123,7 +126,7 @@
   border: 1px solid rgb(255, 255, 255, 0);
 }
 .HomeCard1:hover {
-  border: 1px solid rgb(255, 255, 255, 0.5);
+  /* border: 1px solid rgb(255, 255, 255, 0.1); */
   backdrop-filter: blur(20px);
   box-shadow: 0px 4px 10px 2px rgba(42, 114, 128, 0.5);
 }
@@ -159,16 +162,22 @@
 }
 
 .explorebutton {
-  padding: 10px;
+  align-items: center;
   display: flex;
-  font-size: 30px;
-  border-radius: 50px;
-  padding-left: 30px;
-  padding-right: 30px;
+  font-size: 12px;
+  border-radius: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
   color: var(--clr5);
   background-color: var(--clr1);
 }
-.ExploreSection{
+.ExploreSection {
   padding-top: 30px;
   min-height: 100vh;
+}
+
+.LogoSVGHOME{
+  min-width: 300px;
+  width: 70vw;
+  max-width: 700px;
 }
