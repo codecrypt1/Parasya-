@@ -26,7 +26,7 @@ const ShopCard = () => {
 
   return (
     <div className="md:flex w-full ">
-      <div className="md:w-1/4  bg-[#022b3a] ">
+      <div className="md:w-1/4 bg-[#022b3a]  ">
       <form className="p-2">   
           <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
           <div class="relative">
@@ -36,11 +36,11 @@ const ShopCard = () => {
                   </svg>
               </div>
               <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-[#022b3a] rounded-lg bg-gray-50 f dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white " placeholder="Search ..." required/>
-              <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-[#022b3a]   font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 ">Search</button>
+              <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-[#022b3a]   font-medium rounded-lg text-sm px-4 py-2  ">Search</button>
           </div>
       </form>
       </div>
-      <div className=" shoppage w-3/4  ">
+      <div className="  bg-[#e1e5f2] shoppage md:w-3/4  ">
         <div className="ShopCardMain">
           {CardData.map((Data, index) => (
             <CardShop key={index} {...Data} />
