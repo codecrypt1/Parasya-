@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './Forum.css';
 import { CgProfile } from 'react-icons/cg';
 
+import like from '../../../public/fav.svg';
+import unlike from '../../../public/favfill.svg';
+
 const CommentTile = ({ user, title, details }) => {
   const [isLiked, setLiked] = useState(false);
 
@@ -24,7 +27,8 @@ const CommentTile = ({ user, title, details }) => {
       </div>
       <div className="like-button">
         <button onClick={handleToggleLike}>
-          {isLiked ? 'Unlike' : 'Like'}
+        {isLiked ? like : <img src={unlike} alt='unlike' />}
+          
         </button>
       </div>
     </div>
@@ -32,3 +36,5 @@ const CommentTile = ({ user, title, details }) => {
 };
 
 export default CommentTile;
+
+
