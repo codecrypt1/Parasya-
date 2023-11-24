@@ -1,5 +1,6 @@
 import SelectCustom from "./SelectCustom";
-import MapComp from "./MapComp";
+import Map from "./Map";
+import HostelList from "./HostelList";
 
 const College = () => {
   let options = [
@@ -12,12 +13,12 @@ const College = () => {
   return (
     <div className="w-[90%] h-[80%] border-black rounded-xl shadow-2xl">
       <div className="flex w-full h-full flex-col-reverse md:flex-row">
-        <div className="md:w-1/2 h-full bg-[#1f7a8c] p-16">
+        <div className="md:w-1/2 h-full bg-[#1f7a8c] p-16 flex gap-6 flex-col">
           <SelectCustom options={options} label="Select a college" />
+          <HostelList />
         </div>
         <div className="md:w-1/2 h-full">
-          {" "}
-          <MapComp />
+          <Map />
         </div>
       </div>
     </div>
