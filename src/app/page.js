@@ -1,5 +1,14 @@
-import Image from "next/image";
+"use client";
+import { NextUIProvider } from "@nextui-org/react";
+import NavbarComp from "@/components/Navbar";
 
 export default function Home() {
-  return <div>HEllo world</div>;
+  return (
+    <NextUIProvider>
+      <div className="w-screen h-screen">
+        <NavbarComp />
+        <div>Hello world</div>
+      </div>
+    </NextUIProvider>
+  );
 }
