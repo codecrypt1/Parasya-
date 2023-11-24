@@ -10,7 +10,7 @@ const page = () => {
   return (
     <div>
         <NavbarComp/>
-        <div className="p-4  md:flex w-full md:gap-5  ">
+        <div className="p-4  md:flex w-full  md:gap-5  ">
             
             <div id="default-carousel" class="relative md:w-1/2  " data-carousel="slide">
                

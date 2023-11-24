@@ -16,9 +16,9 @@ export const UploadForm = () => {
     ];
   return (
     
-    <div className="bg-[#e1e5f2] p-3  ">
+    <div className="bg-[#e1e5f2] p-3 h-full  ">
         <div className="">
-            <h1 className="text-center text-md font-bold ">Add Your Item</h1>
+            <h1 className="text-center text-md md:text-lg font-bold ">Add Your Item</h1>
         </div>
       <form class="max-w-sm mx-auto ">
 
@@ -41,10 +41,14 @@ export const UploadForm = () => {
             <label class="block px-2 tracking-wide text-[#022b3a] text-sm font-semibold mb-2" for="grid-first-name">
                Price
             </label>
-            <input class="appearance-none block w-full bg-gray-50 text-gray-700   rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="number" placeholder="Item Price"/>
+            <input class="appearance-none block w-full bg-gray-50 text-[#022b3a]   rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="number" placeholder="Item Price"/>
+        </div>
+        <div className="my-4">
+            <label for="description" class="block mb-2 px-2 text-sm font-medium text-[#022b3a] dark:text-white">Description</label>
+            <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-[#022b3a] bg-gray-50 rounded-lg border  dark:bg-gray-700 dark:border-[#022b3a] dark:placeholder-[#022b3a] dark:text-white " placeholder="Leave a comment..."></textarea>
         </div>
         <div className="">
-            <button className="bg-[#022b3a] p-2 rounded-md text-white px-4  ">Add</button>
+            <button className="bg-[#022b3a] p-2 rounded-md text-white px-4 hover:text-[#1f7a8c]">Add</button>
         </div>
         
       </form>
