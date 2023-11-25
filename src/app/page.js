@@ -5,6 +5,7 @@ import HomeMain from "@/components/HomeMain";
 import ServicesCards from "@/components/ServicesCards";
 import Loader from "./loader/loader";
 import { useEffect, useState } from "react";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,6 +26,7 @@ export default function Home() {
             <NavbarComp />
             <HomeMain />
             <ServicesCards />
+            <Footer/>
           </div>
         </div>
       )}

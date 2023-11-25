@@ -21,11 +21,10 @@ const NavbarComp = () => {
   const router = useRouter();
 
   const menuItems = [
-    "Profile",
-    "Black Market",
-    "Hostel Finder",
-    "Student Sync",
-    "Log Out",
+    { name: "Black Market", href: "/shop" },
+    { name: "Hostel Finder", href: "/map" },
+    { name: "Student Sync", href: "/forum" },
+    { name: "Log In", href: "/login" },
   ];
 
   return (
@@ -40,7 +39,7 @@ const NavbarComp = () => {
             className="font-bold text-sm md:text-md text-inherit text-left text-cyan-900"
             href="/"
           >
-            <LogoNav className="logo_navbar"  />
+            <LogoNav />
             StudentHub Connect
           </Link>
           <p className="font-bold text-inherit text-left">
@@ -82,7 +81,7 @@ const NavbarComp = () => {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link className="text-cyan-900 " href="#">
+          <Link className="text-cyan-900 " href="/login">
             Login
           </Link>
         </NavbarItem>
@@ -91,7 +90,7 @@ const NavbarComp = () => {
             className="text-white bg-cyan-900 hover:bg-cyan-500 "
             as={Link}
             color="primary"
-            href="#"
+            href="/signup"
             variant="flat"
           >
             Sign Up
@@ -110,10 +109,10 @@ const NavbarComp = () => {
                   : "foreground"
               }
               className="w-full"
-              href="#"
+              href={item.href}
               size="lg"
             >
-              {item}
+              {item.name}
             </Link>
           </NavbarMenuItem>
         ))}
@@ -124,9 +123,10 @@ const NavbarComp = () => {
 
 export default NavbarComp;
 
-function LogoNav() {
+export function LogoNav() {
   return (
     <svg
+      className="logonavbar"
       width="90"
       height="40"
       viewBox="0 0 90 70"

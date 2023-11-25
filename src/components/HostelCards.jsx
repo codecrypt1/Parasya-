@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const HostelCards = () => {
   return (
-    <div className="flex flex-col items-center w-screen h-64 border border-cyan-800 rounded-lg shadow md:flex-row md:max-w-xl">
-      <div className=" w-[40%] h-[100%] overflow-hiddenll relative">
+    <div className="flex flex-col items-center w-full h-32 shadow-md rounded-lg shadow md:flex-row md:max-w-xl">
+      <div className=" w-[40%] h-[100%] overflow-hidden relative">
         <Image
           layout="fill"
           className="object-fit  rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
