@@ -16,7 +16,7 @@ let details = [
   },
   {
     id: 2,
-    name: "Engineering Mechanics: Statics and Dynamics",
+    name: "Engineering Mechanics",
     image: "https://dummyimage.com/600x400/engineering-mechanics-book.jpg",
     price: 49.99,
     description:

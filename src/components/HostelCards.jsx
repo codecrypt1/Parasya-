@@ -77,7 +77,7 @@ const HostelCards = () => {
         </div>
       </div>
       <div className="flex flex-col items-center overflow-hidden w-full h-32 border-1 border-cyan-900 rounded-lg shadow md:flex-row md:max-w-xl">
-        <div className=" w-36 h-[100%] overflow-hidden relative">
+        <div className=" w-[40%] h-[100%] overflow-hidden relative">
           <Image
             layout="fill"
             className="object-fit  rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
