@@ -65,16 +65,40 @@ async def get_main():
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
-@app.post("/forum")
-async def create_product(post_data: dict):
+@app.get("/forum")
+async def get_todo():
     try:
-        # Assuming your fetch_all_forums function returns a list of forums, add the new forum to the list
-        new_forum = {"title": post_data.get("title"), "content": post_data.get("content")}
-        forums.append(new_forum)
-        return {"message": "Forum created successfully", "forum": new_forum}
+        response = await fetch_all_forums()
+        return response
     except Exception as e:
         print(f"An error occurred: {str(e)}")
         raise HTTPException(status_code=500, detail="Internal Server Error")
+
+
+
+
+
+
+
+class Product(BaseModel):
+    description: str
+    name: str
+    price: int
+
+async def create_product(todo):
+    document = todo
+    result = await collection.insert_one(document)
+    return document
+
+@app.post("/product", response_model=Product)
+async def post_Product(todo: Product):
+    response = await create_product(todo.dict())
+    if response:
+        return response
+    raise HTTPException(400, "Something went wrong")
+
+
+
 
 if __name__ == "__main__":
     import uvicorn

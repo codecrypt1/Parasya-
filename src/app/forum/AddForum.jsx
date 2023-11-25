@@ -10,36 +10,9 @@ const AddForum = ({ name, image }) => {
   const handleSubmit = async () => {
     try {
       const response = await fetch("http://127.0.0.1:8000/add_forum", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          image:
-            "https://cdn.pixabay.com/photo/2023/10/01/16/01/rose-8287698_640.jpg",
-          title: "Main Name 451",
-          context: "Lorem Ipsum dcyeg ybsydbtvf fuesvvufbesv",
-          comments: [
-            {
-              user: {
-                name: "",
-                profilePic:
-                  "https://cdn.pixabay.com/photo/2023/10/23/17/53/bird-8336583_640.jpg",
-              },
-              title: "Name 1",
-              details: "Comment Here",
-            },
-            {
-              user: {
-                name: "",
-                profilePic:
-                  "https://cdn.pixabay.com/photo/2023/10/24/09/23/black-peppercorn-8337820_640.jpg",
-              },
-              title: "Name 2",
-              details: "Comment Here",
-            },
-          ],
-        }),
+        image:"https://cdn.pixabay.com/photo/2023/10/01/16/01/rose-8287698_640.jpg",
+        title: "User name",
+        context: inputValue,
       });
 
       if (!response.ok) {
@@ -53,27 +26,6 @@ const AddForum = ({ name, image }) => {
       console.error("Error adding forum entry:", error);
     }
   };
-
-  // try {
-  //   const response = await fetch("http://localhost:8000/add_forum", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       name: name,
-  //       inputValue: inputValue,
-  //     }),
-  //   });
-  //   if (!response.ok) {
-  //     throw new Error(`HTTP error! Status: ${response.status}`);
-  //   }
-  //   const data = await response.json();
-  //   console.log(data);
-  // } catch (error) {
-  //   console.error("Error adding data to MongoDB:", error);
-  // }console.log("Submitted value:", inputValue);
-  // };
 
   return (
     <div className="AddForumTile">
