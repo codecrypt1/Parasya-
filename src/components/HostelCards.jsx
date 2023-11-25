@@ -76,21 +76,21 @@ const HostelCards = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center overflow-hidden w-full h-32 border-1 border-cyan-900 rounded-lg shadow md:flex-row md:max-w-xl">
-        <div className=" w-[40%] h-[100%] overflow-hidden relative">
+      <div className="flex flex-col items-center w-full h-32 border-1 border-cyan-900 rounded-lg shadow md:flex-row md:max-w-xl">
+        <div className=" w-36 h-[100%] overflow-hidden relative">
           <Image
             layout="fill"
             className="object-fit  rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-            src="/hostel/hostel_data.jpeg"
+            src="/hostel/greenhut-hostel.jpeg"
             alt="hostel image"
           />
         </div>
         <div class="flex flex-col justify-between p-4 mb-6 text-center leading-normal">
           <h5 class="mb-2 text-xl pt-6 font-bold tracking-tight text-gray-900 dark:text-white">
-            Blessings ladies hostel
+            Blessings Ladies hostel
           </h5>
           <p class=" font-normal text-gray-700 dark:text-gray-400">
-            Ladies hostel with good furnitured rooms.
+            Ladies hostel with high quality rooms
           </p>
           <div className="flex justify-center">
             <button className=" font-sans bg-cyan-600 w-16 h-6  text-white rounded-md hover:bg-cyan-900">

@@ -113,7 +113,7 @@ function CardShop({ name, image, price, id }) {
     <div>
       <div className="ShopCard ">
         <img className="IMGshopCard" src={image} layout="fill" />
-        <div className=" flex flex-col items-center my-6 mx-4 gap-3 overflow-hidden">
+        <div className=" flex flex-col items-center text-center my-6 mx-4 gap-3 overflow-hidden">
           <p className="text-cyan-900 text-lg">{name}</p>
           <p className="text-cyan-900">₹{price}</p>
           <div className="flex justify-center text-center  ">
