@@ -123,7 +123,7 @@ const NavbarComp = () => {
 
 export default NavbarComp;
 
-function LogoNav() {
+export function LogoNav() {
   return (
     <svg
       className="logonavbar"
