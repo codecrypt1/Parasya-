@@ -1,86 +1,80 @@
-# main.py
-
-from fastapi import FastAPI, HTTPException, Depends, status, Form
+from typing import List
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from motor.motor_asyncio import AsyncIOMotorClient
-from jose import JWTError, jwt
-from passlib.context import CryptContext
+from bson import ObjectId
 from pydantic import BaseModel
-from datetime import datetime, timedelta
-from fastapi.security import OAuth2PasswordBeare
-from typing import Annotatedr
+from fastapi import FastAPI, HTTPException, Path
+
+from pymongo import MongoClient
+
+import motor.motor_asyncio
+
+client = motor.motor_asyncio.AsyncIOMotorClient(
+    'mongodb+srv://harikpaug18:admin@cluster0.4wq2bn8.mongodb.net/')
+database = client.ForumDB
+collection = database.Forum
+
+
+async def fetch_all_forums():
+    forums = []
+    cursor = collection.find({})
+    async for document in cursor:
+        forums.append(Forum(**document))
+    return forums
+
+
+class User(BaseModel):
+    name: str
+    profilePic: str
+
+
+class Comment(BaseModel):
+    user: User
+    title: str
+    details: str
+
+
+class Forum(BaseModel):
+    image: str
+    title: str
+    context: str
+    comments: list[Comment]
+
 
 app = FastAPI()
 
-# Enable CORS (Cross-Origin Resource Sharing)
+origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# MongoDB setup
-@app.on_event("startup")
-async def startup_db_client():
-    app.mongodb_client = AsyncIOMotorClient("mongodb://localhost:27017")
-    app.mongodb = app.mongodb_client["studenthub"]
-    app.users_collection = app.mongodb["users"]
 
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    app.mongodb_client.close()
+@app.get("/")
+async def get_main():
+    try:
+        return {"Hello": "World"}
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal Server Error")
 
-# Secret key to sign JWT tokens
-SECRET_KEY = "your_secret_key"
-ALGORITHM = "HS256"
 
-# Password hashing
-PASSWORD_HASHING = CryptContext(schemes=["bcrypt"], deprecated="auto")
+@app.get("/forum")
+async def get_todo():
+    try:
+        response = await fetch_all_forums()
+        return response
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal Server Error")
 
-# User model for registration
-class UserRegistration(BaseModel):
-    name: str
-    email: str
-    college: str
-    id: str
-    password: str
+if __name__ == "__main__":
+    import uvicorn
 
-# User model for token response
-class User(BaseModel):
-    email:str
-    password:str
-
-# Token generation for login
-@app.post("/api/token")
-async def login(data: User):
-    print(user.email,user.password)
-    user = await app.users_collection.find_one({"email": data.email})
-    if user and PASSWORD_HASHING.verify(data.password, user["hashed_password"]):
-        token_data = {"sub": user["email"]}
-        return {"access_token": create_jwt_token(token_data), "token_type": "bearer"}
-    raise HTTPException(
-        status_code=status.HTTP_401_UNAUTHORIZED,
-        detail="Invalid credentials",
-        headers={"WWW-Authenticate": "Bearer"},
-    )
-# Registration endpoint
-@app.post("/api/register", response_model=UserRegistration)
-async def register(user: UserRegistration):
-    hashed_password = PASSWORD_HASHING.hash(user.password)
-    user_dict = user.dict()
-    user_dict["hashed_password"] = hashed_password
-    user_id = await app.users_collection.insert_one(user_dict)
-    return {"name": user.name, "email": user.email, "college": user.college, "id": str(user_id.inserted_id)}
-
-# Function to create JWT token
-def create_jwt_token(data: dict, expires_delta: timedelta = None):
-    to_encode = data.copy()
-    if expires_delta:
-        expire = datetime.utcnow() + expires_delta
-    else:
-        expire = datetime.utcnow() + timedelta(minutes=15)
-    to_encode.update({"exp": expire})
-    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
-    return encoded_jwt
+    uvicorn.run(app, host="127.0.0.1", port=8000)
