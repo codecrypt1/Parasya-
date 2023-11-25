@@ -40,7 +40,7 @@ const NavbarComp = () => {
             className="font-bold text-sm md:text-md text-inherit text-left text-cyan-900"
             href="/"
           >
-            <LogoNav className="logo_navbar"  />
+            <LogoNav />
             StudentHub Connect
           </Link>
           <p className="font-bold text-inherit text-left">
@@ -127,6 +127,7 @@ export default NavbarComp;
 function LogoNav() {
   return (
     <svg
+      className="logonavbar"
       width="90"
       height="40"
       viewBox="0 0 90 70"
