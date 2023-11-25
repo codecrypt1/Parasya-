@@ -56,6 +56,7 @@ class User(BaseModel):
 # Token generation for login
 @app.post("/api/token")
 async def login(email: str, password: str):
+    print(email,password)
     user = await app.users_collection.find_one({"email": email})
     if user and PASSWORD_HASHING.verify(password, user["hashed_password"]):
         token_data = {"sub": user["email"]}

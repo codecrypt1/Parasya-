@@ -21,11 +21,10 @@ const NavbarComp = () => {
   const router = useRouter();
 
   const menuItems = [
-    "Profile",
-    "Black Market",
-    "Hostel Finder",
-    "Student Sync",
-    "Log Out",
+    { name: "Black Market", href: "/shop" },
+    { name: "Hostel Finder", href: "/map" },
+    { name: "Student Sync", href: "/forum" },
+    { name: "Log In", href: "/login" },
   ];
 
   return (
@@ -110,10 +109,10 @@ const NavbarComp = () => {
                   : "foreground"
               }
               className="w-full"
-              href="#"
+              href={item.href}
               size="lg"
             >
-              {item}
+              {item.name}
             </Link>
           </NavbarMenuItem>
         ))}

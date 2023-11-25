@@ -10,6 +10,7 @@ const LoginForm = () => {
     e.preventDefault();
     let email = formRef.current["email"].value;
     let password = formRef.current["password"].value;
+    console.log({ email, password });
     try {
       const response = await fetch("http://localhost:8000/api/token", {
         method: "POST",
