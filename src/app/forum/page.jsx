@@ -1,62 +1,36 @@
+"use client";
+
 import NavbarComp from "@/components/Navbar";
 import AddForum from "./AddForum";
 import ForumTile from "./ForumTile";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Forum = () => {
+  const [forums, setForumData] = useState([]);
   const userData = [
     {
-      name: "My name",
+      name: "USERNAME",
       image:
         "https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_640.jpg",
     },
   ];
-  const forums = [
-    {
-      image:
-        "https://cdn.pixabay.com/photo/2023/10/01/16/01/rose-8287698_640.jpg",
-      title: "Main Name 1",
-      context:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quod autem maiores sed vitae maxime reiciendis, culpa soluta quia cumque atque nesciunt ea nisi magnam nulla reprehenderit blanditiis enim laborum.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quod autem maiores sed vitae maxime reiciendis, culpa soluta quia cumque atque nesciunt ea nisi magnam nulla reprehenderit blanditiis enim laborum.",
-      comments: [
-        {
-          user: {
-            name: "",
-            profilePic:
-              "https://cdn.pixabay.com/photo/2023/10/23/17/53/bird-8336583_640.jpg",
-          },
-          title: "Name 1",
-          details: "Comment Here",
-        },
-        {
-          user: {
-            name: "",
-            profilePic:
-              "https://cdn.pixabay.com/photo/2023/10/24/09/23/black-peppercorn-8337820_640.jpg",
-          },
-          title: "Name 2",
-          details: "Comment Here",
-        },
-      ],
-    },
 
-    {
-      image:
-        "https://cdn.pixabay.com/photo/2023/10/27/16/15/honey-bee-8345726_640.jpg",
-      title: "main Name 2",
-      context: "Lorem Ipsum",
-      comments: [
-        {
-          user: {
-            name: "",
-            profilePic:
-              "https://cdn.pixabay.com/photo/2023/10/23/17/53/bird-8336583_640.jpg",
-          },
-          title: "Name 3",
-          details: "OK da",
-        },
-      ],
-    },
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:8000/forum');
+        const data = await response.json();
+        setForumData(data);
+        console.log("RESPONSE: ",response)
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <div
       style={{
