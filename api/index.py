@@ -49,17 +49,15 @@ class UserRegistration(BaseModel):
 
 # User model for token response
 class User(BaseModel):
-    name: str
-    email: str
-    college: str
-    id: str
+    email:str
+    password:str
 
 # Token generation for login
 @app.post("/api/token")
-async def login(email: Annotated[str, Form()], password: Annotated[str, Form()]):
-    print(email,password)
-    user = await app.users_collection.find_one({"email": email})
-    if user and PASSWORD_HASHING.verify(password, user["hashed_password"]):
+async def login(data: User):
+    print(user.email,user.password)
+    user = await app.users_collection.find_one({"email": data.email})
+    if user and PASSWORD_HASHING.verify(data.password, user["hashed_password"]):
         token_data = {"sub": user["email"]}
         return {"access_token": create_jwt_token(token_data), "token_type": "bearer"}
     raise HTTPException(
@@ -68,7 +66,7 @@ async def login(email: Annotated[str, Form()], password: Annotated[str, Form()])
         headers={"WWW-Authenticate": "Bearer"},
     )
 # Registration endpoint
-@app.post("/api/register", response_model=User)
+@app.post("/api/register", response_model=UserRegistration)
 async def register(user: UserRegistration):
     hashed_password = PASSWORD_HASHING.hash(user.password)
     user_dict = user.dict()

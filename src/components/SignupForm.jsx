@@ -69,7 +69,7 @@ const SignupForm = () => {
   ];
 
   const handleRegister = async (e) => {
-    e.preventDefault();
+    e?.preventDefault();
     let email = formRef.current["email"].value;
     let id = formRef.current["college_id"].value;
     let password = formRef.current["password"].value;
@@ -225,7 +225,7 @@ const SignupForm = () => {
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Already have an account?{" "}
                   <a
-                    href="#"
+                    href="/login"
                     className="font-medium text-cyan-600 hover:underline dark:text-primary-500"
                   >
                     Login here
