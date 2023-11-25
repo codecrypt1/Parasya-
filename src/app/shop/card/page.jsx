@@ -9,8 +9,8 @@ import Image from "next/image";
 let data = [
   {
     id: 1,
-    name: "Introduction to Electrical Engineering",
-    image: "https://dummyimage.com/600x400/electrical-engineering-book.jpg",
+    name: "calculator",
+    image: "/shopitems/calculator-3.webp",
     price: 39.99,
     description:
       "A foundational textbook covering the basics of electrical engineering.",
@@ -18,8 +18,8 @@ let data = [
   },
   {
     id: 2,
-    name: "Engineering Mechanics: Statics and Dynamics",
-    image: "https://dummyimage.com/600x400/engineering-mechanics-book.jpg",
+    name: "calculator",
+    image: "/shopitems/calculator.webp",
     price: 49.99,
     description:
       "Comprehensive coverage of statics and dynamics for engineering students.",
@@ -27,8 +27,8 @@ let data = [
   },
   {
     id: 3,
-    name: "Drafting and Design Toolkit",
-    image: "https://dummyimage.com/600x400/drafting-design-toolkit.jpg",
+    name: "Drafter",
+    image: "/shopitems/miinidrafter.webp",
     price: 89.99,
     description:
       "A complete toolkit for drafting and design, including pencils, rulers, and compass.",
@@ -36,8 +36,8 @@ let data = [
   },
   {
     id: 4,
-    name: "Materials Science and Engineering",
-    image: "https://dummyimage.com/600x400/materials-science-book.jpg",
+    name: "Basics of civil engineering",
+    image: "/shopitems/text-2.webp",
     price: 44.99,
     description:
       "Explore the properties and applications of materials in engineering.",
@@ -45,8 +45,8 @@ let data = [
   },
   {
     id: 5,
-    name: "Digital Logic Design Kit",
-    image: "https://dummyimage.com/600x400/digital-logic-design-kit.jpg",
+    name: "Basics of Electrical Engineering",
+    image: "/shopitems/text-3.webp",
     price: 79.99,
     description:
       "Hands-on kit for learning and implementing digital logic design concepts.",
@@ -54,8 +54,8 @@ let data = [
   },
   {
     id: 6,
-    name: "Structural Analysis Software",
-    image: "https://dummyimage.com/600x400/structural-analysis-software.jpg",
+    name: "Physics and Chemistry text book",
+    image: "/shopitems/text-4.webp",
     price: 129.99,
     description:
       "Professional software for structural analysis and design projects.",
@@ -63,8 +63,8 @@ let data = [
   },
   {
     id: 7,
-    name: "Robotics and Automation Textbook",
-    image: "https://dummyimage.com/600x400/robotics-automation-book.jpg",
+    name: "Engineering Graphics",
+    image: "/shopitems/images.jpeg",
     price: 54.99,
     description:
       "Comprehensive guide to robotics and automation in engineering.",
@@ -72,8 +72,8 @@ let data = [
   },
   {
     id: 8,
-    name: "Engineering Drawing Set",
-    image: "https://dummyimage.com/600x400/engineering-drawing-set.jpg",
+    name: "Minidrafter",
+    image: "/shopitems/minidrafter-3.webp",
     price: 19.99,
     description:
       "Essential drawing tools for engineering sketches and diagrams.",
@@ -81,16 +81,16 @@ let data = [
   },
   {
     id: 9,
-    name: "Circuit Simulation Software",
-    image: "https://dummyimage.com/600x400/circuit-simulation-software.jpg",
+    name: "Scientific Calculator",
+    image: "/shopitems/map.webp",
     price: 69.99,
     description: "Simulate and analyze electronic circuits with this software.",
     availability: "buy",
   },
   {
     id: 10,
-    name: "Renewable Energy Systems Handbook",
-    image: "https://dummyimage.com/600x400/renewable-energy-handbook.jpg",
+    name: "Engineering Mechanics",
+    image: "/shopitems/text-6.webp",
     price: 64.99,
     description:
       "Comprehensive handbook on renewable energy systems for engineers.",
@@ -107,8 +107,8 @@ const page = () => {
     <div>
       <NavbarComp />
       <div className="p-4  md:flex w-full md:gap-5  ">
-        <div className="relative md:w-1/2  ">
-          <div className="relative h-56 overflow-hidden  md:h-96">
+        <div class="relative md:w-1/2  ">
+          <div class="relative h-56 overflow-hidden  md:h-96">
             <Image src={image} layout="fill" />
           </div>
         </div>
