@@ -15,6 +15,7 @@ client = motor.motor_asyncio.AsyncIOMotorClient(
     'mongodb+srv://harikpaug18:admin@cluster0.4wq2bn8.mongodb.net/')
 database = client.ForumDB
 collection = database.Forum
+collection2 = database.Products
 
 
 async def fetch_all_forums():
@@ -87,12 +88,12 @@ class Product(BaseModel):
 
 async def create_product(todo):
     document = todo
-    result = await collection.insert_one(document)
+    result = await collection2.insert_one(document)
     return document
 
 @app.post("/product", response_model=Product)
 async def post_Product(todo: Product):
-    response = await create_product(todo.dict())
+    response = await create_product(todo.model_dump())
     if response:
         return response
     raise HTTPException(400, "Something went wrong")
@@ -102,5 +103,4 @@ async def post_Product(todo: Product):
 
 if __name__ == "__main__":
     import uvicorn
-
     uvicorn.run(app, host="127.0.0.1", port=8000)

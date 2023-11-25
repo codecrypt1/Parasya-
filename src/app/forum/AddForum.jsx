@@ -9,7 +9,7 @@ const AddForum = ({ name, image }) => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/add_forum", {
+      const response = await fetch("http://127.0.0.1:8000/forum", {
         image:"https://cdn.pixabay.com/photo/2023/10/01/16/01/rose-8287698_640.jpg",
         title: "User name",
         context: inputValue,
