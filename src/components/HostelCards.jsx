@@ -8,7 +8,7 @@ const HostelCards = () => {
         <Image
           layout="fill"
           className="object-fit  rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-          src="/shopitems/text-2.webp"
+          src="/greenhut-hostel.webp"
           alt="hostel image"
         />
       </div>
