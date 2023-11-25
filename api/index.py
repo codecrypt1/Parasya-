@@ -65,11 +65,13 @@ async def get_main():
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
-@app.get("/forum")
-async def get_todo():
+@app.post("/forum")
+async def create_product(post_data: dict):
     try:
-        response = await fetch_all_forums()
-        return response
+        # Assuming your fetch_all_forums function returns a list of forums, add the new forum to the list
+        new_forum = {"title": post_data.get("title"), "content": post_data.get("content")}
+        forums.append(new_forum)
+        return {"message": "Forum created successfully", "forum": new_forum}
     except Exception as e:
         print(f"An error occurred: {str(e)}")
         raise HTTPException(status_code=500, detail="Internal Server Error")

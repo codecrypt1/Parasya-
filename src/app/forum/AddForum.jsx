@@ -9,7 +9,6 @@ const AddForum = ({ name, image }) => {
 
   const handleSubmit = async () => {
     try {
-      // Make a FastAPI call to add the forum entry
       const response = await fetch("http://127.0.0.1:8000/add_forum", {
         method: "POST",
         headers: {
