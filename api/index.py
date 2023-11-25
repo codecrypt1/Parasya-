@@ -1,13 +1,14 @@
 # main.py
 
-from fastapi import FastAPI, HTTPException, Depends, status
+from fastapi import FastAPI, HTTPException, Depends, status, Form
 from fastapi.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 from pydantic import BaseModel
 from datetime import datetime, timedelta
-from fastapi.security import OAuth2PasswordBearer
+from fastapi.security import OAuth2PasswordBeare
+from typing import Annotatedr
 
 app = FastAPI()
 
@@ -55,7 +56,7 @@ class User(BaseModel):
 
 # Token generation for login
 @app.post("/api/token")
-async def login(email: str, password: str):
+async def login(email: Annotated[str, Form()], password: Annotated[str, Form()]):
     print(email,password)
     user = await app.users_collection.find_one({"email": email})
     if user and PASSWORD_HASHING.verify(password, user["hashed_password"]):
