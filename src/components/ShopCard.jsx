@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
+import Fuse from "fuse.js";
+import React, { useEffect, useRef, useState } from "react";
 import "./main.css";
 
 const ShopCard = ({ details }) => {
@@ -22,9 +26,31 @@ const ShopCard = ({ details }) => {
     },
   ];
 
+  let inputRef = useRef();
+
+  useEffect(() => {
+    setData(details);
+  }, []);
+
+  let [data, setData] = useState([]);
+
+  const fuse = new Fuse(details, {
+    keys: ["name", "price", "description"],
+  });
+
+  let handleClick = () => {
+    let value = inputRef.current.value;
+    if (value == "") return setData(details);
+    let data = fuse.search(value);
+    data = data.map((e) => {
+      return e.item;
+    });
+    setData(data);
+  };
+
   return (
     <div className="md:flex w-full ">
-      <div className="md:w-1/4 bg-[#022b3a]  overflow-hidden  ">
+      <div className="md:w-1/4 bg-[#022b3a]  overflow-hidden">
         <form className=" fixed">
           <label
             for="default-search"
@@ -56,10 +82,13 @@ const ShopCard = ({ details }) => {
               class="block w-full p-4 ps-10 text-sm text-[#022b3a] rounded-lg bg-gray-50 f dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white "
               placeholder="Search ..."
               required
+              ref={inputRef}
+              onChange={handleClick}
             />
             <button
               type="submit"
               class="text-white absolute end-2.5 bottom-2.5 bg-[#022b3a]   font-medium rounded-lg text-sm px-4 py-2  "
+              onClick={handleClick}
             >
               Search
             </button>
@@ -68,7 +97,7 @@ const ShopCard = ({ details }) => {
       </div>
       <div className="  bg-[#e1e5f2] shoppage md:w-3/4  ">
         <div className="ShopCardMain">
-          {details.map((Data, index) => (
+          {data.map((Data, index) => (
             <CardShop key={index} {...Data} />
           ))}
         </div>
