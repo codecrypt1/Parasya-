@@ -40,7 +40,7 @@ const NavbarComp = () => {
             className="font-bold text-sm md:text-md text-inherit text-left text-cyan-900"
             href="/"
           >
-            <LogoNav className="logo_navbar"  />
+            <LogoNav className="logo_navbar" />
             StudentHub Connect
           </Link>
           <p className="font-bold text-inherit text-left">
@@ -82,7 +82,7 @@ const NavbarComp = () => {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link className="text-cyan-900 " href="#">
+          <Link className="text-cyan-900 " href="/login">
             Login
           </Link>
         </NavbarItem>
@@ -91,7 +91,7 @@ const NavbarComp = () => {
             className="text-white bg-cyan-900 hover:bg-cyan-500 "
             as={Link}
             color="primary"
-            href="#"
+            href="/signup"
             variant="flat"
           >
             Sign Up
