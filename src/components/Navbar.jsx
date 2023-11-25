@@ -40,11 +40,7 @@ const NavbarComp = () => {
             className="font-bold text-sm md:text-md text-inherit text-left text-cyan-900"
             href="/"
           >
-<<<<<<< HEAD
             <LogoNav />
-=======
-            <LogoNav className="logo_navbar" />
->>>>>>> 4c344b92b7ec88651e620ccdc0784862d5f674ba
             StudentHub Connect
           </Link>
           <p className="font-bold text-inherit text-left">
