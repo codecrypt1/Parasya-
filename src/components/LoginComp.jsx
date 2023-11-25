@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 const LoginComp = () => {
@@ -6,7 +8,7 @@ const LoginComp = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("http://localhost:8000/token", {
+      const response = await fetch("http://localhost:8000/api/token", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

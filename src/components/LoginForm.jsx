@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useRef } from "react";
+import axios from "axios";
 
 const LoginForm = () => {
   const formRef = useRef();
@@ -10,23 +11,12 @@ const LoginForm = () => {
     e.preventDefault();
     let email = formRef.current["email"].value;
     let password = formRef.current["password"].value;
-    console.log({ email, password });
+    let data = { email, password };
     try {
-      const response = await fetch("http://localhost:8000/api/token", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
+      let response = await axios.post("http://localhost:8000/api/token", {
+        data,
       });
-
-      if (!response.ok) {
-        throw new Error("Login failed");
-      }
-
-      const data = await response.json();
-      // Store the access_token in localStorage or a secure cookie
-      console.log("Login successful:", data.access_token);
+      console.log(response);
     } catch (error) {
       console.error("Login failed:", error.message);
     }

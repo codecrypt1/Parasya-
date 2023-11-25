@@ -1,3 +1,4 @@
+import LoginComp from "@/components/LoginComp";
 import LoginForm from "@/components/LoginForm";
 
 const Login = () => {
