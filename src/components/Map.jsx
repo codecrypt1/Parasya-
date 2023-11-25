@@ -165,7 +165,7 @@ const Map = () => {
   const { hostels } = data;
 
   return (
-    <MapContainer center={[10.554722, 76.224521]} zoom={13} scrollWheelZoom>
+    <MapContainer center={[10.554722, 76.224521]} zoom={16} scrollWheelZoom>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
